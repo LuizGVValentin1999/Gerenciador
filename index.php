@@ -12,7 +12,7 @@ for ($i = 2; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 
 <html>
 	<head>
-        <title>Teste</title>
+        <title>Gerenciador</title>
 		<meta charset="utf-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,7 +46,7 @@ if(is_file($file)){
  <footer id="footer" class="wrapper style1-alt">
         <div class="inner">
             <ul class="menu">
-                <li>&copy; Untitled. All rights reserved.</li>
+                <li>&copy; Sistema blue.</li>
                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
