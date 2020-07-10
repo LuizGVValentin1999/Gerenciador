@@ -65,10 +65,3 @@ if(is_file($file)){
 
 	</body>
 </html>
-
-
-
-
-
-
-
