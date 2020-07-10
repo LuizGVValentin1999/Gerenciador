@@ -4,22 +4,4 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteRule (.*)$ index.php?url=$1 [L,QSA]
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-aloalo
+TESTE DE RETORNO 
