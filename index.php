@@ -1,11 +1,12 @@
 <?php
-@session_start();
+session_start();
 $url = (isset($_GET['url'])) ? $_GET['url']:'home';
 $url = str_replace(".php", "", $url);
 $contb = array_filter(explode('/',$url));
 $file = $url =='admin'?'admin.php':"System/View/" .$url .".php";
 $checklink ="";
 for ($i = 2; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
+
 
 ?>
 <!DOCTYPE HTML>
@@ -25,12 +26,21 @@ for ($i = 2; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 <!-- Wrapper -->
 
 <?php
- include('System/View/navbar.php');
+if( $url == "home"){
+//  include('System/View/navbar.php');
+}
+else if(@$_SESSION['adm']){
+	include('System/View/sistema/navbar.php');
+}
+
 ?>
 <div id="wrapper">
 <?php
 
 if(is_file($file)){
+	if($url != "home"){
+		include('System/Checker/chekerlogin.php');
+	}
     include $file;
 }else{
     include '404.php';
@@ -43,7 +53,7 @@ if(is_file($file)){
 </div>
 
  <!-- Footer -->
- <footer id="footer" class="wrapper style1-alt">
+ <footer id="footer" class="wrapper style1-alt" >
         <div class="inner">
             <ul class="menu">
                 <li>&copy; Sistema blue.</li>
