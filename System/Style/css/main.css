@@ -191,7 +191,6 @@ input, select, textarea {
 	}
 
 		h1.major {
-			margin: 0 0 1.3em 0;
 			position: relative;
 			padding-bottom: 0.35em;
 		}
@@ -2528,7 +2527,6 @@ input, select, textarea {
 			color: #312450;
 			text-align: center;
 			line-height: 2.5em;
-			margin: 0 0 1.3em 0;
 		}
 
 			.icon.major:before {

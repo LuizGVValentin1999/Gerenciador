@@ -4,7 +4,7 @@
 if(!$_SESSION['adm']){
     session_destroy();
 
-    header("location:{$checklink}home");
+    header("location:{$checkurl}home");
 }
 
 ?>
