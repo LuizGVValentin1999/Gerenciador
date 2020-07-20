@@ -12,7 +12,7 @@
 		<!-- Header -->
 			<header id="header">
 				<h1>Login</h1>
-				<p>faça seu login para poder <br />
+				<p>faça seu login para poder <br/>
 				acessar o  sistema ou <a href="../../../home"> Voltar tela inicial</a>.</p>
 			</header>
 
