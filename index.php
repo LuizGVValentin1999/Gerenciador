@@ -21,6 +21,7 @@ for ($i = 3; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="<?=$checkurl?>System/Style/css/main.css" />
+		<link rel="stylesheet" href="<?=$checkurl?>System/Style/css/style.css" />
 		<noscript><link rel="stylesheet" href="<?=$checkurl?>System/Style/css/noscript.css" /></noscript>
     
 	</head>
@@ -73,7 +74,8 @@ if(is_file($file)){
     		<script src="<?=$checkurl?>System/Style/js/breakpoints.min.js"></script>
     		<script src="<?=$checkurl?>System/Style/js/util.js"></script>
 			<script src="<?=$checkurl?>System/Style/js/main.js"></script>
+			<script src="<?=$checkurl?>System/Style/js/function.js"></script>
 	
-
+			<script src='https://s3.amazonaws.com/popmotion.io/static/dist/popmotion.min.js'></script>
 	</body>
 </html>
