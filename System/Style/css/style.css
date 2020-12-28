@@ -50,6 +50,7 @@
 .close-modal {
   text-align: right;
   cursor: pointer;
+  float: right;
 }
 
 /* Animation */

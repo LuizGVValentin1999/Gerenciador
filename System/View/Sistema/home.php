@@ -1,2 +1,2 @@
 
-<h1>Bem vindo <?=$_SESSION['login'];?></h1>
+<h1>Bem vindo <?=$_SESSION['login']['USUARIO'];?></h1>

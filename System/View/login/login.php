@@ -52,14 +52,14 @@ if(@$_POST['vai'] == 'Entrar'){
 	$query = "SELECT * FROM usuarios where USUARIO = '{$user}' AND SENHA = md5('{$password}')";
 	$result_user = mysqli_query($con, $query);
 	$result = mysqli_fetch_assoc($result_user);
-	
+
 
 	$result_row = mysqli_query($con, $query);
 	$row = mysqli_num_rows($result_row);
 	
 	
 	if($row == 1 ) {
-		$_SESSION['login'] = $user;
+		$_SESSION['login'] = $result;
         $_SESSION['adm'] = 1;
         header("Location: ../../../Sistema/home");
         exit();

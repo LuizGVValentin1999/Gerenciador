@@ -3046,7 +3046,6 @@ input, select, textarea {
 			-ms-justify-content: center;
 			justify-content: center;
 			width: 50em;
-			-ms-flex: 1;
 		}
 
 			.spotlights > section > .content > .inner {
@@ -3461,7 +3460,7 @@ input, select, textarea {
 		}
 
 /* Wrapper (main) */
-
+	
 	#sidebar + #wrapper {
 		margin-left: 18em;
 	}
@@ -3907,3 +3906,10 @@ input, select, textarea {
 			}
 
 		}
+
+/*center*/
+
+.center{
+	margin-right: auto;
+    margin-left: auto;
+}
