@@ -1,3 +1,8 @@
+<?php 
+include('System/Checker/conection.php');
+echo @$_SESSION['msg'];
+unset($_SESSION['msg']);
+?>
 <!-- Wrapper -->
 <div id="wrapper">
 	<!-- Main -->
@@ -13,36 +18,23 @@
 				<table>
 					<thead>
 						<tr>
-							<th>Name</th>
-							<th>Description</th>
-							<th>Price</th>
+							<th>Codigo</th>
+							<th>Nome</th>
+							<th>Descrição</th>
 						</tr>
 					</thead>
 					<tbody id="tableId" class="element">
+					<?php
+					$query = "SELECT * FROM produto";
+					$result = mysqli_query($con, $query);
+					while(@$linha=mysqli_fetch_array($result)){
+					?>
 						<tr>
-							<td>Item One</td>
-							<td>Ante turpis integer aliquet porttitor.</td>
-							<td>29.99</td>
+							<td><?=$linha['CODIGO']?></td>
+							<td><?=$linha['NOME']?></td>
+							<td><?=$linha['DESCRICAO']?></td>
 						</tr>
-						<tr>
-							<td>Item Two</td>
-							<td>Vis ac commodo adipiscing arcu aliquet.</td>
-							<td>19.99</td>
-						</tr>
-						<tr>
-							<td>Item Three</td>
-							<td> Morbi faucibus arcu accumsan lorem.</td>
-							<td>29.99</td>
-						</tr>
-						<tr>
-							<td>Item Four</td>
-							<td>Vitae integer tempus condimentum.</td>
-							<td>19.99</td>
-						</tr>
-						<tr>
-							<td>Item Five</td>
-							<td>Ante turpis integer aliquet porttitor.</td>
-							<td>29.99</td>
+					<?php } ?>
 						</tr>
 					</tbody>
 				</table>
