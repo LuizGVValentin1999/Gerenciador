@@ -88,7 +88,7 @@ p {
 
 @keyframes mymove {
   from {top: 90px;}
-  to {top: 120px;}
+  to {top: 130px;}
 }
 
 .alert {
@@ -99,13 +99,13 @@ p {
   animation-duration: .4s;
   animation-timing-function: cubic-bezier(0,0,.3,1.6);
   z-index: 100000;
+  top: 130px;
 
 }
 
 .alert > div {
   background-color: #1b1e24f3;
   width: 400px;
-  top: 120px;
   min-height: 50px;
   padding-left: 30px;
   border-radius: 8px;

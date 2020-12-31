@@ -3,18 +3,6 @@ include('System/Checker/conection.php');
 echo @$_SESSION['msg'];
 unset($_SESSION['msg']);
 ?>
-<div class="alert">
-<div>
-	<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
-	<div class="alert-text"><strong class="alert-erro">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
-</div>
-<div>
-	<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
-	<div class="alert-text"><strong class="alert-success">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
-    
-</div>
-
-</div>
 <!-- Wrapper -->
 <div id="wrapper">
 	<!-- Main -->
