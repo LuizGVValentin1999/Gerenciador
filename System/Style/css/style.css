@@ -86,4 +86,57 @@ p {
   line-height: 1.4em;
 }
 
+@keyframes mymove {
+  from {top: 90px;}
+  to {top: 120px;}
+}
+
+.alert {
+  right: 20px;
+  left: auto;
+  position: fixed;
+  animation-name: mymove;
+  animation-duration: .4s;
+  animation-timing-function: cubic-bezier(0,0,.3,1.6);
+  z-index: 100000;
+
+}
+
+.alert > div {
+  background-color: #1b1e24f3;
+  width: 400px;
+  top: 120px;
+  min-height: 50px;
+  padding-left: 30px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding-top: 10px
+}
+
+.alert-text{
+  top: 20%;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  width: 350px;
+  padding-bottom: 10px;
+
+}
+
+.alert-close{
+  color :#2500f5cc !important;
+  font-weight: bold !important;
+  font-family: "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  position: absolute;
+  right: 8px;
+  font-size: 20px;   
+  margin-top: -16px;
+  cursor: pointer;
+}
+.alert-erro{
+  color: #ff0000 !important;
+}
+.alert-success{
+  color: #008000 !important;
+}
+
 

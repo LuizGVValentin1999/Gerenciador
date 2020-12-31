@@ -3,17 +3,29 @@ include('System/Checker/conection.php');
 echo @$_SESSION['msg'];
 unset($_SESSION['msg']);
 ?>
+<div class="alert">
+<div>
+	<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+	<div class="alert-text"><strong class="alert-erro">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
+</div>
+<div>
+	<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+	<div class="alert-text"><strong class="alert-success">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
+    
+</div>
+
+</div>
 <!-- Wrapper -->
 <div id="wrapper">
 	<!-- Main -->
 	<section class="wrapper">
-		<div class="inner">
+		<div class="inner center">
 			<a class="button" value="1" name="Botao" href="cadastrarProduto" style="float: right;margin-top: 20px;" >Adicionar</a>
 			<h1 >Produtos</h1>
 		</div>
 	</section>
 	<section id="main" class="wrapper">
-		<div class="inner" style="padding-top: 0px;" >
+		<div class="inner center" style="padding-top: 0px;" >
 			<div class="table-wrapper">
 				<table>
 					<thead>
