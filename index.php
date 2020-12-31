@@ -27,6 +27,19 @@ for ($i = 3; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 	</head>
 <body class="is-preload">
 <!-- Wrapper -->
+<<<<<<< 95f4c03aa7e808dd755f62d1b5a93775d0d08cd1
+=======
+<div class="alert">
+	<div>
+		<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+		<div class="alert-text"><strong class="alert-erro">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
+	</div>
+	<div>
+		<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+		<div class="alert-text"><strong class="alert-success">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
+		
+	</div>
+>>>>>>> atualizao final alerta front
 
 <?php
 if( $url == "home"){
