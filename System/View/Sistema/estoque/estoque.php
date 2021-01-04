@@ -1,13 +1,15 @@
 <?php 
 include('System/Checker/conection.php');
+echo @$_SESSION['msg'];
+unset($_SESSION['msg']);
 ?>
 <!-- Wrapper -->
 <div id="wrapper">
 	<!-- Main -->
 	<section class="wrapper">
 		<div class="inner center">
-			<a class="button" value="1" name="Botao" href="cadastrarProduto" style="float: right;margin-top: 20px;" >Adicionar</a>
-			<h1 >Produtos</h1>
+			<a class="button" value="1" name="Botao" href="cadastrarProduto" style="float: right;margin-top: 20px;" >entrada</a>
+			<h1 >Estoque</h1>
 		</div>
 	</section>
 	<section id="main" class="wrapper">

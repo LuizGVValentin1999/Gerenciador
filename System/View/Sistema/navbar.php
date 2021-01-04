@@ -3,7 +3,7 @@
 	<nav>
 		<ul>
 			<li><a href="<?=$checklink?>home">Home</a></li>
-			<li><a href="<?=$checklink?>generic.html" >Generic</a></li>
+			<li><a href="<?=$checklink?>estoque/estoque" >Estoque</a></li>
 			<li><a href="<?=$checklink?>produto/produtos">produtos</a></li>
 			<li><a href="<?=$checkurl?>System/checker/logout.php">sair</a></li>
 		</ul>

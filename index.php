@@ -27,16 +27,34 @@ for ($i = 3; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 	</head>
 <body class="is-preload">
 <!-- Wrapper -->
+
+
 <div class="alert">
-	<div>
-		<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
-		<div class="alert-text"><strong class="alert-erro">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
-	</div>
-	<div>
-		<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
-		<div class="alert-text"><strong class="alert-success">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
-		
-	</div>
+	<?php 
+	if(@$_SESSION['msg']['erro']){
+		foreach($_SESSION['msg']['erro'] as $erro){
+		?>
+		<div>
+			<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+			<div class="alert-text"><strong class="alert-erro">Erro!!</strong> <?= $erro?></div>
+		</div>
+		<?php
+		}
+	}
+	if(@$_SESSION['msg']['success']){
+		foreach($_SESSION['msg']['success'] as $success){
+			?>
+
+			<div>
+				<div class="alert-close" onclick="$(this).parent().remove();" aria-hidden="true">X</div>
+				<div class="alert-text"><strong class="alert-success">Oloco, meu!</strong> Olha esse alerta animado, como é chique! </div>
+			</div>
+	<?php
+		}	
+unset($_SESSION['msg']);
+	}
+	?>
+
 </div>
 <?php
 if( $url == "home"){
