@@ -8,8 +8,6 @@ $checkurl ="";
 $checklink ="";
 for ($i = 2; $i <= count($contb) ; $i++) { $checkurl = $checkurl."../"; }
 for ($i = 3; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
-
-
 ?>
 <!DOCTYPE HTML>
 
@@ -91,8 +89,9 @@ if(is_file($file)){
                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
-    </footer>
- 
+	</footer>
+	
+
 
  <!-- Scripts -->
  			<script src="<?=$checkurl?>System/Style/js/jquery.min.js"></script>
@@ -105,5 +104,17 @@ if(is_file($file)){
 			<script src="<?=$checkurl?>System/Style/js/function.js"></script>
 	
 			<script src='https://s3.amazonaws.com/popmotion.io/static/dist/popmotion.min.js'></script>
+
+
+			<script>
+	<?php 
+	if(@$_SESSION['callback']){
+		foreach($_SESSION['callback'] as $callback){
+	echo $callback;
+		}	
+	}
+	unset($_SESSION['callback']);
+	?>
+	</script>
 	</body>
 </html>
