@@ -47,7 +47,7 @@ include('System/Checker/conection.php');
         rows[i].onclick = function(){ return function(){
               var cell = this.cells[0];
                var id = cell.innerHTML;
-			   window.location.href = "cadastrarProduto#"+id
+			   window.location.href = "cadastrarProduto?codigoProduto="+id 
         };}(rows[i]);
     }
 }

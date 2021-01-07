@@ -49,8 +49,8 @@ for ($i = 3; $i <= count($contb) ; $i++) { $checklink = $checklink."../"; }
 			</div>
 	<?php
 		}	
-unset($_SESSION['msg']);
 	}
+	unset($_SESSION['msg']);
 	?>
 
 </div>
