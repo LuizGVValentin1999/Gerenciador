@@ -1,42 +1,53 @@
-<?php
+<?php 
 include('System/Checker/conection.php');
-echo @$_SESSION['msg'];
-unset($_SESSION['msg']);
+
+if(@$_GET['codigoProduto']){
+	
+	$query = "SELECT * FROM produto WHERE CODIGO = '{$_GET['codigoProduto']}'"; 
+	$result = mysqli_query($con, $query);
+	$produto = mysqli_fetch_array($result);
+
+	
+
+}elseif(@$_SESSION['PRODUTO']){ 
+	$produto = $_SESSION['PRODUTO'];
+	unset($_SESSION['PRODUTO']);
+}
+
 ?><!-- Wrapper -->
 <div id="wrapper">
 	<!-- Main -->
 	<section class="wrapper">
 		<div class="inner center">
-
 			<form method="POST" action="../../system/app/produto.php">
 				<div>
 					<input type="hidden" name="funcao" value="cadastrar">
 
 					<thead>
 						<tr>
-							<h2>Adicionar produtos</h2>
+							<h2><?=@$_GET['codigoProduto'] ? "Alterar" : "Adicionar"  ?> produto</h2> 
 						</tr>
 					</thead>
 					<div class="row gtr-uniform">
-						<div class="col-6 col-12-xsmall">
+						<div class="col-6 col-12-xsmall"> 
 							<h4> Código: </h4>
-							<input type="text" name="CODIGO" id="CODIGO_PRODUTO" value="" required placeholder="Código" />
+							<input type="text" name="CODIGO" id="CODIGO_PRODUTO" value="<?= @$produto['CODIGO'] ?>" required placeholder="Código" />
 						</div>
 						<div class="col-6 col-12-xsmall">
 							<h4> Nome do produto: </h4>
-							<input type="text" name="NOME" id="NOME_PRODUTO" value="" required placeholder="Produto" />
-						</div>
+							<input type="text" name="NOME" id="NOME_PRODUTO" value="<?= @$produto['NOME'] ?>" required placeholder="Produto" />
+						</div> 	
 
 						<div class="col-4 col-12-xsmall">
 							<h4> Tipo de medição: </h4>
-							<select required name="TIPO_DE_MEDICAO" id="TIPO_DE_MEDICAO_PRODUTO">
+							<select required name="TIPO_DE_MEDICAO" id="TIPO_DE_MEDICAO_PRODUTO"> 
 								<option value="" hidden>- Selecione o tipo de medição -</option>
-								<?php
+								<?php 
 								$query = "SELECT * FROM tipo_de_medicao ";
-								$result = mysqli_query($con, $query);
-								while(@$linha=mysqli_fetch_array($result)){
+								$result = mysqli_query($con, $query);  
+								while(@$linha=mysqli_fetch_array($result)){ 
 								?>
-								<option value="<?=$linha['ID']?>"><?=$linha['ABREVIACAO'].'-'.$linha['NOME']?></option>
+								<option <?= @$produto['TIPO_DE_MEDICAO'] == $linha['ID'] ? "selected" : "" ?> value="<?=$linha['ID']?>"><?=$linha['ABREVIACAO'].'-'.$linha['NOME']?></option>
 								<?php } ?>
 							</select>
 
@@ -50,13 +61,13 @@ unset($_SESSION['msg']);
 						<div class="col-4 col-12-xsmall">
 							<h4> Grupo: </h4>
 							<select required name="GRUPO" id="GRUPO_PRODUTO">
-								<option value="" hidden>- Selecione o grupo -</option>
+								<option value="" hidden>- Selecione o grupo -</option> 
 								<?php
 								$query = "SELECT * FROM produto_grupo ";
 								$result = mysqli_query($con, $query);
 								while(@$linha=mysqli_fetch_array($result)){
 								?>
-								<option value="<?=$linha['ID']?>"><?=$linha['CODIGO'].'-'.$linha['NOME']?></option>
+								<option <?= @$produto['GRUPO'] == $linha['ID'] ? "selected" : "" ?>  value="<?=$linha['ID']?>"><?=$linha['CODIGO'].'-'.$linha['NOME']?></option>  
 								<?php } ?>
 							</select>
 
@@ -67,10 +78,10 @@ unset($_SESSION['msg']);
 							<a class="button modal-trigger" value="1" data-modal="modal-grupo" name="Botao" href="cadastrarProduto"> Adicionar </a>
 						</div>
 
-						<div class="col-12">
+						<div class="col-12"> 
 							<h4> Descrição do produto: </h4>
 
-							<textarea name="DESCRICAO" id="descricao_produto" placeholder="Descrição" rows="6"></textarea>
+							<textarea name="DESCRICAO" id="descricao_produto" placeholder="Descrição" rows="6" ></textarea>
 						</div>
 
 					</div>
@@ -125,9 +136,14 @@ unset($_SESSION['msg']);
 							</div>
 
 							<div class="col-6 col-12-xsmall">
+								<h4> Código da Medição: </h4> 
+								<input required type="text" name="CODIGO" id="CODIGO_MEDICAO" value="" placeholder="Código" />
+							</div>
+
+							<div class="col-12 col-12-xsmall">
 								<h4> Descrição da medição: </h4>
 
-								<textarea name="DESCRICAO" id="DESCRICAO_MEDICAO" placeholder="Descrição" rows="1"></textarea>
+								<textarea name="DESCRICAO" id="DESCRICAO_MEDICAO" placeholder="Descrição" rows="3"></textarea>
 							</div>
 
 						</div>

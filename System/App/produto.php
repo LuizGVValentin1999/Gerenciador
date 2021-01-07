@@ -20,9 +20,9 @@ switch ($_POST['funcao']) {
 function cadastrar_medicao($post){
     include('../../System/Checker/conection.php');
    
-    $query = "INSERT INTO tipo_de_medicao (ABREVIACAO, NOME, TIPO_DE_MEDICAO, DESCRICAO) VALUES ('{$post['ABREVIACAO']}', '{$post['NOME']}', {$post['TIPO_DE_MEDICAO']}, '{$post['DESCRICAO']}');";
+    $query = "INSERT INTO tipo_de_medicao (ABREVIACAO, NOME, TIPO_DE_MEDICAO, DESCRICAO, CODIGO) VALUES ('{$post['ABREVIACAO']}', '{$post['NOME']}', {$post['TIPO_DE_MEDICAO']}, '{$post['DESCRICAO']}', '{$post['CODIGO']}');";
 	$result_user = mysqli_query($con, $query);
-	mysqli_fetch_assoc($result_user);
+	mysqli_fetch_assoc($result_user); 
     header("Location: ../../Sistema/produto/cadastrarProduto");
     exit();
 }
@@ -35,22 +35,23 @@ function cadastrar_grupo($post){
 	$result_user = mysqli_query($con, $query);
 	mysqli_fetch_assoc($result_user);
     header("Location: ../../Sistema/produto/cadastrarProduto");
+
     exit();
 }
 
-function cadastrar($post){
-    @session_start();
+function cadastrar($post){ 
+    @session_start(); 
     include('../../System/Checker/conection.php');
 
-     
 	$query = "SELECT * FROM produto where CODIGO = '{$post['CODIGO']}' ";
 
 	$result_row = mysqli_query($con, $query);
     $row = mysqli_num_rows($result_row);
     
     if($row) {
-    $_SESSION['msg'] = "codigo ja utilizado" ;
+    $_SESSION['msg']['erro'][] = "codigo ja utilizado" ;
     header("Location: ../../Sistema/produto/cadastrarProduto");
+    $_SESSION['PRODUTO'] = $post;
     exit();
     }
     $datetime = date("Y-m-d H:i:s");
@@ -60,5 +61,4 @@ function cadastrar($post){
 	mysqli_fetch_assoc($result_user);
     header("Location: ../../Sistema/produto/cadastrarProduto");
     exit();
-
 }
