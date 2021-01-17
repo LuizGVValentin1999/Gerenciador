@@ -59,9 +59,8 @@ if( $url == "home"){
 //  include('System/View/navbar.php');
 }
 else if(@$_SESSION['adm']){
-	include('System/View/sistema/navbar.php');
+	include('System/View/Sistema/navbar.php');
 }
-
 ?>
 <div id="wrapper">
 <?php
