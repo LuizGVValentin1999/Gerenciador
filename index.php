@@ -84,7 +84,7 @@ if(is_file($file)){
  <footer id="footer" class="wrapper style1-alt" >
         <div class="inner">
             <ul class="menu">
-                <li>&copy; Sistema blue.</li>
+                <li>&copy; Sistema lvalentin.</li>
                 <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>
